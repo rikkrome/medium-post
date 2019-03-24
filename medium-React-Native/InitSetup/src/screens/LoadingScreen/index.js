@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StatusBar } from "react-native";
+import { View, Text, AsyncStorage } from "react-native";
 import { fonts, colors, width } from "../../components/styles";
 import ProgressBar from "../../components/progressBar";
 export default class LoadingScreen extends Component {
@@ -11,14 +11,22 @@ export default class LoadingScreen extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      const userToken = this._getUserToken();
-      this.props.navigation.navigate(userToken ? "App" : "Auth");
-    }, 3000);
+    this._init();
   }
 
-  _getUserToken = () => {
-    return false;
+  _init = () => {
+    setTimeout(async () => {
+      const userToken = await this._getUserToken();
+      this.props.navigation.navigate(userToken ? "App" : "Auth");
+    }, 3000);
+  };
+
+  _getUserToken = async () => {
+    const userToken = await AsyncStorage.getItem("userToken");
+    if (__DEV__) {
+      return false;
+    }
+    return userToken;
   };
 
   render() {

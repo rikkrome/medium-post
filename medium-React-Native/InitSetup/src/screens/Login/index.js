@@ -21,6 +21,7 @@ export default class Login extends React.Component {
           <Button
             title="Login"
             onPress={async () => {
+              await AsyncStorage.setItem("userToken", "123456789");
               this.props.navigation.navigate("App");
             }}
           />
