@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, StatusBar } from "react-native";
 import { fonts, colors, width } from "../../components/styles";
 import ProgressBar from "../../components/progressBar";
 export default class LoadingScreen extends Component {
@@ -9,6 +9,17 @@ export default class LoadingScreen extends Component {
       Loading: true
     };
   }
+
+  componentDidMount() {
+    setTimeout(() => {
+      const userToken = this._getUserToken();
+      this.props.navigation.navigate(userToken ? "App" : "Auth");
+    }, 3000);
+  }
+
+  _getUserToken = () => {
+    return false;
+  };
 
   render() {
     const { container, backgroundColor } = styles;

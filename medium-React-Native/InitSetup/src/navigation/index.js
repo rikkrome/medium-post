@@ -1,4 +1,2 @@
-import BottomTabNavigator from './BottomTabNavigator';
-export {
-  BottomTabNavigator
-}
+import AppNavigator from "./AppNavigator";
+export { AppNavigator };
