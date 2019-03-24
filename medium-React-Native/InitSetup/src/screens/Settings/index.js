@@ -1,10 +1,16 @@
 import React from "react";
-import { View, Button } from "react-native";
+import { View, AsyncStorage } from "react-native";
 import { colors } from "../../components/styles";
+import { ButtonCTA } from "../../components";
 
 export default class Profile extends React.Component {
   static navigationOptions = {
     title: "Settings"
+  };
+
+  _logout = () => {
+    AsyncStorage.removeItem("userToken");
+    this.props.navigation.navigate("Auth");
   };
 
   render() {
@@ -13,15 +19,16 @@ export default class Profile extends React.Component {
         <View
           style={{
             flex: 1,
-            backgroundColor: colors.mainColors.darkBlue,
+            backgroundColor: colors.mainColors.white,
             alignItems: "center",
             justifyContent: "center"
           }}
         >
-          <Button
+          <ButtonCTA
             title="Go to VIEW 2"
             onPress={() => this.props.navigation.navigate("ViewTwo")}
           />
+          <ButtonCTA title="Logout" onPress={this._logout} />
         </View>
       </View>
     );

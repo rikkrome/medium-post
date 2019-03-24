@@ -1,10 +1,16 @@
 import React from "react";
-import { View, Button, AsyncStorage } from "react-native";
+import { View, AsyncStorage } from "react-native";
 import { colors } from "../../components/styles";
+import { ButtonCTA } from "../../components";
 
 export default class Login extends React.Component {
   static navigationOptions = {
-    title: "Login"
+    headerTransparent: true
+  };
+
+  _login = async () => {
+    await AsyncStorage.setItem("userToken", "123456789");
+    this.props.navigation.navigate("App");
   };
 
   render() {
@@ -13,18 +19,12 @@ export default class Login extends React.Component {
         <View
           style={{
             flex: 1,
-            backgroundColor: colors.mainColors.darkBlue,
+            backgroundColor: colors.mainColors.white,
             alignItems: "center",
             justifyContent: "center"
           }}
         >
-          <Button
-            title="Login"
-            onPress={async () => {
-              await AsyncStorage.setItem("userToken", "123456789");
-              this.props.navigation.navigate("App");
-            }}
-          />
+          <ButtonCTA title="Login" onPress={this._login} />
         </View>
       </View>
     );

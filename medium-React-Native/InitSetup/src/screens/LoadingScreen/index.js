@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, AsyncStorage } from "react-native";
-import { fonts, colors, width } from "../../components/styles";
-import ProgressBar from "../../components/progressBar";
+import { fonts, colors, WIDTH } from "../../components/styles";
+import { ProgressBar } from "../../components";
+
 export default class LoadingScreen extends Component {
   constructor(props) {
     super(props);
@@ -42,7 +43,7 @@ export default class LoadingScreen extends Component {
           indeterminate={true}
           indeterminateAnimationDuration={3000}
           useNativeDriver={true}
-          width={width / 1.5}
+          width={WIDTH / 1.5}
           color={colors.mainColors.midBlue}
         />
       </View>

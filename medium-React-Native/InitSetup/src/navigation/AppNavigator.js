@@ -11,34 +11,45 @@ import ViewTwo from "../screens/ViewTwo";
 import Login from "../screens/Login";
 import LoadingScreen from "../screens/LoadingScreen";
 
-// AuthStack
+/**
+ * @description - main nav for the Login screen
+ * @AuthStack
+ */
 const AuthStack = createStackNavigator({ Login: Login });
 
-// Profile Tabs
+/**
+ * @description - main nav for the Profile tab
+ * @ProfileTabs
+ */
 const ProfileStack = createStackNavigator({
   Profile: Profile,
   ViewOne: ViewOne
 });
 
-// Settings Tabs
+/**
+ * @description - main nav for the Settings tab
+ * @SettingsTabs
+ */
 const SettingsStack = createStackNavigator({
   Settings: Settings,
   ViewTwo: ViewTwo
 });
 
-// full AppStack
+/**
+ * @description - main app nav
+ * @FullAppStack
+ */
 const AppStack = createBottomTabNavigator({
   Profile: ProfileStack,
   Settings: SettingsStack
 });
 
 /***
- * This allow us to switch between nav stacks.
+ * @description - This allow us to switch between nav stacks.
  * @AuthLoading - loading screen will load the init data needed.
  * @App - main app stack
  * @Auth - login stack
  * */
-
 const rootStack = createSwitchNavigator(
   {
     AuthLoading: LoadingScreen,
