@@ -1,4 +1,4 @@
-import { AnalyticsViewOne, AnalyticsViewTwo } from "../../screens/Analytics";
+import { AnalyticsViewOne, AnalyticsViewTwo } from "../../../screens/Analytics";
 
 /**
  * @description - main nav for the Analytics stack

@@ -1,4 +1,4 @@
-import { SettingsViewOne, SettingsViewTwo } from "../../screens/Settings";
+import { SettingsViewOne, SettingsViewTwo } from "../../../screens/Settings";
 
 /**
  * @description - main nav for the Settings stack

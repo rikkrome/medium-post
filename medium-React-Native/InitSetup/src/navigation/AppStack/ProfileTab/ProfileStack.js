@@ -1,4 +1,4 @@
-import { ProfileViewOne, ProfileViewTwo } from "../../screens/Profile";
+import { ProfileViewOne, ProfileViewTwo } from "../../../screens/Profile";
 
 /**
  * @description - main nav for the Profile stack
