@@ -8,7 +8,7 @@ const AnalyticsStack = {
   AnalyticsViewOne: {
     screen: AnalyticsViewOne,
     navigationOptions: {
-      title: "AnalyticsViewOne",
+      title: "Analytics",
       headerTintColor: "#000000"
     }
   },

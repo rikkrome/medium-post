@@ -33,6 +33,7 @@ const AppStack = createBottomTabNavigator(
       }
     }),
     tabBarOptions: {
+      showLabel: false,
       activeTintColor: "tomato",
       inactiveTintColor: "gray"
     }

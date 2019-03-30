@@ -8,7 +8,7 @@ const ProfileStack = {
   ProfileViewOne: {
     screen: ProfileViewOne,
     navigationOptions: {
-      title: "ProfileViewOne",
+      title: "Profile",
       headerTintColor: "#000000"
     }
   },
