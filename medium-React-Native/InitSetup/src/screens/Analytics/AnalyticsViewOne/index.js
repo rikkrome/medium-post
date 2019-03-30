@@ -25,7 +25,7 @@ export default class AnalyticsViewOne extends React.Component {
           }}
         >
           <ButtonCTA
-            title="Go to AnalyticsViewOne"
+            title="Go to AnalyticsViewTwo"
             onPress={() => this.props.navigation.navigate("AnalyticsViewTwo")}
           />
         </View>

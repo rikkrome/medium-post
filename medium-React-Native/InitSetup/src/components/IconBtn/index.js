@@ -1,9 +1,9 @@
 import React from "react";
-import { TouchableHighlight, Image } from "react-native";
+import { TouchableOpacity, Image } from "react-native";
 
 export default function IconBtn({ source, onPress }) {
   return (
-    <TouchableHighlight
+    <TouchableOpacity
       onPress={onPress}
       style={{ marginHorizontal: 15, padding: 5 }}
     >
@@ -11,6 +11,6 @@ export default function IconBtn({ source, onPress }) {
         source={source}
         style={[{ width: 24, height: 24 }, { tintColor: "gray" }]}
       />
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 }
