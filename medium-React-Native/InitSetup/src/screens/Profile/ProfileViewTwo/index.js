@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { colors } from "../../components/styles";
+import { colors } from "../../../components/styles";
 
-export default class ViewOne extends React.Component {
+export default class ProfileViewTwo extends React.Component {
   static navigationOptions = {
-    title: "ViewOne"
+    title: "ProfileViewTwo"
   };
 
   render() {
@@ -18,7 +18,7 @@ export default class ViewOne extends React.Component {
             justifyContent: "center"
           }}
         >
-          <Text>ViewOne Screen</Text>
+          <Text>ProfileViewTwo Screen</Text>
         </View>
       </View>
     );

@@ -4,10 +4,8 @@ import {
   createAppContainer,
   createSwitchNavigator
 } from "react-navigation";
-import Profile from "../screens/Profile";
-import Settings from "../screens/Settings";
-import ViewOne from "../screens/ViewOne";
-import ViewTwo from "../screens/ViewTwo";
+import { ProfileViewOne, ProfileViewTwo } from "../screens/Profile";
+import { SettingsViewOne, SettingsViewTwo } from "../screens/Settings";
 import Login from "../screens/Login";
 import LoadingScreen from "../screens/LoadingScreen";
 
@@ -18,30 +16,36 @@ import LoadingScreen from "../screens/LoadingScreen";
 const AuthStack = createStackNavigator({ Login: Login });
 
 /**
- * @description - main nav for the Profile tab
- * @ProfileTabs
- */
-const ProfileStack = createStackNavigator({
-  Profile: Profile,
-  ViewOne: ViewOne
-});
-
-/**
  * @description - main nav for the Settings tab
  * @SettingsTabs
  */
-const SettingsStack = createStackNavigator({
-  Settings: Settings,
-  ViewTwo: ViewTwo
-});
+const SettingsTab = createStackNavigator(
+  {
+    SettingsViewOne: SettingsViewOne,
+    SettingsViewTwo: SettingsViewTwo
+  },
+  { initialRouteName: "SettingsViewOne" }
+);
+
+/**
+ * @description - main nav for the Profile tab
+ * @ProfileTabs
+ */
+const ProfileTab = createStackNavigator(
+  {
+    ProfileViewOne: ProfileViewOne,
+    ProfileViewTwo: ProfileViewTwo
+  },
+  { initialRouteName: "ProfileViewOne" }
+);
 
 /**
  * @description - main app nav
  * @FullAppStack
  */
 const AppStack = createBottomTabNavigator({
-  Profile: ProfileStack,
-  Settings: SettingsStack
+  Profile: ProfileTab,
+  Settings: SettingsTab
 });
 
 /***

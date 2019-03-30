@@ -19,7 +19,7 @@ export default class LoadingScreen extends Component {
     setTimeout(async () => {
       const userToken = await this._getUserToken();
       this.props.navigation.navigate(userToken ? "App" : "Auth");
-    }, 3000);
+    }, 1000);
   };
 
   _getUserToken = async () => {

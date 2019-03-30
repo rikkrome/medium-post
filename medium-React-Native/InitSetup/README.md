@@ -1,12 +1,14 @@
-# Init Setup
-# React Native Boilerplate
+# React Native Boilerplate Setup
+
 ## Overview
-This is a React Native boilerplate setup with react-navigation, 
+
+This is a React Native boilerplate setup with react-navigation,
 
 - [ ] React Native setup
 - [ ] Directory Structure
-- [ ] Dependencies & dev-dependencies
+- [ ] Dependencies & Dev-Dependencies
 - [ ] Navigation setup
+
 ---
 
 ## Setup
@@ -23,16 +25,19 @@ brew install watchman
 ```
 
 #### Xcode
-  - install the Xcode Command Line Tools
+
+- install the Xcode Command Line Tools
 
 #### The React Native CLI
- ```
- npm install -g react-native-cli
- ```
- Doesn’t work? You may need to add sudo at the beginning of the command.
 
+```
+npm install -g react-native-cli
+```
+
+Doesn’t work? You may need to add `sudo` at the beginning of the command.
 
 #### Creating a new application
+
 ```
 react-native init AwesomeProjectName
 ```
@@ -44,20 +49,21 @@ react-native init AwesomeProjectName
 #### **I added the following directories**
 
 ```
-cd /AwesomeProjectName && 
-mkdir src && 
-cd src/ && 
-mkdir assets && cd assets/ mkdir fonts && mkdir icons && mkdir images && mkdir videos && cd .. && 
-mkdir components && 
-mkdir navigation && 
+cd /AwesomeProjectName &&
+mkdir src &&
+cd src/ &&
+mkdir assets && cd assets/ mkdir fonts && mkdir icons && mkdir images && mkdir videos && cd .. &&
+mkdir components &&
+mkdir navigation &&
 mkdir screens &&
-mkdir services && 
+mkdir services &&
 mkdir utils &&
 ```
 
 > add `.gitkeep` inside the empty directories you want to add to git
 
 Current `src` file structure:
+
 ```
 ├── src
     ├── assets
@@ -93,19 +99,20 @@ All development files are placed in the `src` folder. The root file is `index.js
 
 ---
 
-
 ## Screens Setup
 
 ### making test screens
-Next, create two test screens inside the  screen directory.
+
+Next, create two test screens inside the screen directory.
 
 ```
-cd screens/ && mkdir ViewOne && mkdir ViewTwo && 
-cd ViewOne/ && touch index.js && cd .. && 
+cd screens/ && mkdir ViewOne && mkdir ViewTwo &&
+cd ViewOne/ && touch index.js && cd .. &&
 cd ViewTwo/ && touch index.js && ls
 ```
 
 Current `screens` file structure:
+
 ```
 ├── screens
     ├── ViewOne
@@ -113,28 +120,37 @@ Current `screens` file structure:
     └── ViewTwo
           └── index.js
 ```
-We are going to add the following code in both `ViewOne/index.js` &  `ViewTwo/index.js`file to build a very simple view.
+
+We are going to add the following code in both `ViewOne/index.js` & `ViewTwo/index.js`file to build a very simple view.
 
 ### `ViewOne/index.js`
+
 ```js
 import React from "react";
-import { View, Text} from "react-native";
+import { View, Text } from "react-native";
 
 export default class ViewOne extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1}}>
-      <View style={{ flex: 1, backgroundColor: '#101D29', alignItems: "center", justifyContent: "center"}}>
+      <View style={{ flex: 1 }}>
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: "#101D29",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
           <Text>ViewOne Screen</Text>
         </View>
       </View>
     );
   }
 }
-
 ```
 
 ### `ViewTwo/index.js`
+
 ```js
 import React from "react";
 import { View, Text } from "react-native";
@@ -142,7 +158,14 @@ import { View, Text } from "react-native";
 export default class ViewTwo extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#223040', alignItems: "center", justifyContent: "center"}}>
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: "#223040",
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+      >
         <Text>ViewTwo Screen</Text>
       </View>
     );
@@ -158,10 +181,11 @@ export default class ViewTwo extends React.Component {
 $ npm install --save react-navigation
 $ npm install --save react-native-gesture-handler
 ```
-**Link** react-native-gesture-handler: 
-> follow the steps in 
-[react native manual linking](https://facebook.github.io/react-native/docs/linking-libraries-ios)
 
+**Link** react-native-gesture-handler:
+
+> follow the steps in
+> [react native manual linking](https://facebook.github.io/react-native/docs/linking-libraries-ios)
 
 Next, create the index file in the Navigation directory.
 
@@ -173,8 +197,8 @@ We are going to add the following code in our `navigation/index.js` file to buil
 
 ```js
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import ViewOne from '../screens/ViewOne';
-import ViewTwo from '../screens/ViewTwo';
+import ViewOne from "../screens/ViewOne";
+import ViewTwo from "../screens/ViewTwo";
 
 const RootStack = createStackNavigator(
   {
@@ -182,13 +206,9 @@ const RootStack = createStackNavigator(
     ViewTwoScreen: ViewTwo
   },
   {
-    initialRouteName: "ViewOneScreen",
+    initialRouteName: "ViewOneScreen"
   }
 );
 
 export default createAppContainer(RootStack);
-
 ```
-
-
-
