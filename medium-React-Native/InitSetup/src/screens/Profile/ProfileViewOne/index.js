@@ -32,10 +32,6 @@ export default class ProfileViewOne extends React.Component {
             title="Go to ProfileViewTwo"
             onPress={() => this.props.navigation.navigate("ProfileViewTwo")}
           />
-          <ButtonCTA
-            title="Go to SettingsViewTwo"
-            onPress={() => this.props.navigation.navigate("SettingsViewTwo")}
-          />
         </View>
       </View>
     );

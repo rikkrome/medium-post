@@ -6,6 +6,7 @@ import {
   createAppContainer,
   createSwitchNavigator
 } from "react-navigation";
+import { AnalyticsViewOne, AnalyticsViewTwo } from "../screens/Analytics";
 import { ProfileViewOne, ProfileViewTwo } from "../screens/Profile";
 import { SettingsViewOne, SettingsViewTwo } from "../screens/Settings";
 import Login from "../screens/Login";
@@ -36,6 +37,18 @@ const ProfileStack = {
 };
 
 /**
+ * @description - main nav for the Analytics tab
+ * @ProfileTabs
+ */
+const AnalyticsTab = createStackNavigator(
+  {
+    AnalyticsViewOne: AnalyticsViewOne,
+    AnalyticsViewTwo: AnalyticsViewTwo
+  },
+  { initialRouteName: "AnalyticsViewOne" }
+);
+
+/**
  * @description - main nav for the Profile tab
  * @ProfileTabs
  */
@@ -53,7 +66,8 @@ const ProfileTab = createStackNavigator(
  */
 const AppStack = createBottomTabNavigator(
   {
-    Profile: ProfileTab
+    Profile: ProfileTab,
+    Analytics: AnalyticsTab
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -64,10 +78,10 @@ const AppStack = createBottomTabNavigator(
           iconName = focused
             ? require("../assets/icons/user.png")
             : require("../assets/icons/user.png");
-        } else if (routeName === "Settings") {
+        } else if (routeName === "Analytics") {
           iconName = focused
-            ? require("../assets/icons/settings.png")
-            : require("../assets/icons/settings.png");
+            ? require("../assets/icons/stats.png")
+            : require("../assets/icons/stats.png");
         }
         // You can return any component that you like here!
         return (
