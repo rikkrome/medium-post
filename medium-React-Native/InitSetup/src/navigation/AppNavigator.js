@@ -6,59 +6,16 @@ import {
   createAppContainer,
   createSwitchNavigator
 } from "react-navigation";
-import { AnalyticsViewOne, AnalyticsViewTwo } from "../screens/Analytics";
-import { ProfileViewOne, ProfileViewTwo } from "../screens/Profile";
-import { SettingsViewOne, SettingsViewTwo } from "../screens/Settings";
 import Login from "../screens/Login";
 import LoadingScreen from "../screens/LoadingScreen";
+import { ProfileTab } from "./ProfileTab/index";
+import { AnalyticsTab } from "./AnalyticsTab/index";
 
 /**
  * @description - main nav for the Login screen
  * @AuthStack
  */
 const AuthStack = createStackNavigator({ Login: Login });
-
-/**
- * @description - main nav for the Settings stack
- * @SettingsStack
- */
-const SettingsStack = {
-  SettingsViewOne: SettingsViewOne,
-  SettingsViewTwo: SettingsViewTwo
-};
-
-/**
- * @description - main nav for the Profile stack
- * @ProfileStack
- */
-const ProfileStack = {
-  ProfileViewOne: ProfileViewOne,
-  ProfileViewTwo: ProfileViewTwo
-};
-
-/**
- * @description - main nav for the Analytics tab
- * @ProfileTabs
- */
-const AnalyticsTab = createStackNavigator(
-  {
-    AnalyticsViewOne: AnalyticsViewOne,
-    AnalyticsViewTwo: AnalyticsViewTwo
-  },
-  { initialRouteName: "AnalyticsViewOne" }
-);
-
-/**
- * @description - main nav for the Profile tab
- * @ProfileTabs
- */
-const ProfileTab = createStackNavigator(
-  {
-    ...ProfileStack,
-    ...SettingsStack
-  },
-  { initialRouteName: "ProfileViewOne" }
-);
 
 /**
  * @description - main app nav
@@ -87,7 +44,11 @@ const AppStack = createBottomTabNavigator(
           />
         );
       }
-    })
+    }),
+    tabBarOptions: {
+      activeTintColor: "tomato",
+      inactiveTintColor: "gray"
+    }
   }
 );
 
