@@ -1,11 +1,19 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, Button } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { colors } from "../../../components/styles";
-import { ButtonCTA } from "../../../components";
+import { ButtonCTA, IconBtn } from "../../../components";
 
 export default class ProfileViewOne extends React.Component {
-  static navigationOptions = {
-    title: "ProfileViewOne"
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: "ProfileViewOne",
+      headerRight: (
+        <IconBtn
+          source={require("../../../assets/icons/settings.png")}
+          onPress={() => navigation.navigate("SettingsViewOne")}
+        />
+      )
+    };
   };
 
   render() {
@@ -23,10 +31,6 @@ export default class ProfileViewOne extends React.Component {
           <ButtonCTA
             title="Go to ProfileViewTwo"
             onPress={() => this.props.navigation.navigate("ProfileViewTwo")}
-          />
-          <ButtonCTA
-            title="Go to Settings"
-            onPress={() => this.props.navigation.navigate("Settings")}
           />
           <ButtonCTA
             title="Go to SettingsViewTwo"
