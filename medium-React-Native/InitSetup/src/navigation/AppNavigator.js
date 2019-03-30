@@ -75,13 +75,9 @@ const AppStack = createBottomTabNavigator(
         const { routeName } = navigation.state;
         let iconName;
         if (routeName === "Profile") {
-          iconName = focused
-            ? require("../assets/icons/user.png")
-            : require("../assets/icons/user.png");
+          iconName = require("../assets/icons/user.png");
         } else if (routeName === "Analytics") {
-          iconName = focused
-            ? require("../assets/icons/stats.png")
-            : require("../assets/icons/stats.png");
+          iconName = require("../assets/icons/stats.png");
         }
         // You can return any component that you like here!
         return (
