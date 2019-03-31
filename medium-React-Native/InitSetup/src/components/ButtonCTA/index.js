@@ -7,7 +7,7 @@ export default function ButtonCTA({ type, style, title, onPress }) {
   let _height = 50;
   let _style = typeof style === "object" ? { ...style } : {};
   const theme = colors.getTheme();
-  let btnTheme = theme.btnLight;
+  let btnTheme = theme.btnPrimary;
   if (theme[type]) {
     btnTheme = theme[type];
   }

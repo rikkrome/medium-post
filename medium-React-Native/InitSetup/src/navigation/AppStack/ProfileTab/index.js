@@ -21,7 +21,10 @@ const ProfileTab = createStackNavigator(
           backgroundColor: theme.backgroundColor,
           borderBottomWidth: 0
         },
-        headerTintColor: theme.textColor
+        headerTintColor: theme.activeTintColor,
+        headerTitleStyle: {
+          color: theme.textColor
+        }
       };
     }
   }

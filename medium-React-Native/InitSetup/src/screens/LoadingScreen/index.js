@@ -26,7 +26,10 @@ export default class LoadingScreen extends Component {
   };
 
   _setTheme = async () => {
-    await setTheme("darkTheme");
+    const theme = await AsyncStorage.getItem("theme");
+    if (theme) {
+      await setTheme(theme);
+    }
   };
 
   _getUserToken = async () => {
