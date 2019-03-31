@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { colors } from "../../../components/styles";
+import { getTheme } from "../../../components/styles/colors";
 
 export default class ViewTwo extends React.Component {
   static navigationOptions = {
@@ -8,16 +8,17 @@ export default class ViewTwo extends React.Component {
   };
 
   render() {
+    const theme = getTheme();
     return (
       <View
         style={{
           flex: 1,
-          backgroundColor: colors.mainColors.lightBlue,
+          backgroundColor: theme.backgroundColor,
           alignItems: "center",
           justifyContent: "center"
         }}
       >
-        <Text>SettingsViewTwo Screen</Text>
+        <Text style={{ color: theme.textColor }}>SettingsViewTwo Screen</Text>
       </View>
     );
   }

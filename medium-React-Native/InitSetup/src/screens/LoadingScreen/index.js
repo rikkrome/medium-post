@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, AsyncStorage } from "react-native";
-import { fonts, colors, WIDTH } from "../../components/styles";
+import { fonts, WIDTH } from "../../components/styles";
+import { setTheme } from "../../components/styles/colors";
+
 import { ProgressBar } from "../../components";
 
 export default class LoadingScreen extends Component {
@@ -18,8 +20,13 @@ export default class LoadingScreen extends Component {
   _init = () => {
     setTimeout(async () => {
       const userToken = await this._getUserToken();
+      await this._setTheme();
       this.props.navigation.navigate(userToken ? "App" : "Auth");
     }, 1000);
+  };
+
+  _setTheme = async () => {
+    await setTheme("darkTheme");
   };
 
   _getUserToken = async () => {
@@ -35,7 +42,7 @@ export default class LoadingScreen extends Component {
     return (
       <View style={[container, backgroundColor]}>
         <View style={{ padding: 10 }}>
-          <Text style={{ ...fonts.Heading.h1, color: colors.mainColors.white }}>
+          <Text style={{ ...fonts.Heading.h1, color: "#ffffff" }}>
             Loading...
           </Text>
         </View>
@@ -44,7 +51,7 @@ export default class LoadingScreen extends Component {
           indeterminateAnimationDuration={3000}
           useNativeDriver={true}
           width={WIDTH / 1.5}
-          color={colors.mainColors.midBlue}
+          color={"#AEC5D6"}
         />
       </View>
     );
@@ -58,6 +65,6 @@ const styles = {
     alignItems: "center"
   },
   backgroundColor: {
-    backgroundColor: colors.mainColors.darkBlue
+    backgroundColor: "#000000"
   }
 };

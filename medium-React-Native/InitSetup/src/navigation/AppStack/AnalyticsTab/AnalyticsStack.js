@@ -9,16 +9,14 @@ const AnalyticsStack = {
     screen: AnalyticsViewOne,
     path: "Analytics/:AnalyticsViewOne",
     navigationOptions: {
-      title: "Stats",
-      headerTintColor: "#000000"
+      title: "Stats"
     }
   },
   AnalyticsViewTwo: {
     screen: AnalyticsViewTwo,
     path: "Analytics/:AnalyticsViewTwo",
     navigationOptions: {
-      title: "Activity",
-      headerTintColor: "#000000"
+      title: "Activity"
     }
   }
 };

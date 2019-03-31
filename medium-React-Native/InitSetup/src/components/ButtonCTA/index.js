@@ -2,17 +2,22 @@ import React from "react";
 import { View, TouchableOpacity, Text } from "react-native";
 import { colors, fonts, WIDTH } from "../styles";
 
-export default function ButtonCTA({ style, title, onPress }) {
+export default function ButtonCTA({ type, style, title, onPress }) {
   let _width = WIDTH / 2;
   let _height = 50;
   let _style = typeof style === "object" ? { ...style } : {};
+  const theme = colors.getTheme();
+  let btnTheme = theme.btnLight;
+  if (theme[type]) {
+    btnTheme = theme[type];
+  }
   return (
     <TouchableOpacity
       onPress={onPress}
       style={{
         width: _width,
         height: _height,
-        backgroundColor: colors.mainColors.midBlue,
+        backgroundColor: btnTheme.backgroundColor,
         borderRadius: 10,
         marginVertical: 10,
         marginHorizontal: 10,
@@ -26,7 +31,7 @@ export default function ButtonCTA({ style, title, onPress }) {
           justifyContent: "center"
         }}
       >
-        <Text style={{ ...fonts.Heading.h4, color: colors.mainColors.white }}>
+        <Text style={{ ...fonts.Heading.h4, color: btnTheme.textColor }}>
           {title}
         </Text>
       </View>

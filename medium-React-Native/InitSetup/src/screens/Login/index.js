@@ -14,12 +14,13 @@ export default class Login extends React.Component {
   };
 
   render() {
+    const theme = colors.getTheme();
     return (
       <View style={{ flex: 1 }}>
         <View
           style={{
             flex: 1,
-            backgroundColor: colors.mainColors.white,
+            backgroundColor: theme.backgroundColor,
             alignItems: "center",
             justifyContent: "center"
           }}

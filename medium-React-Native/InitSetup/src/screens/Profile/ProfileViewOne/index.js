@@ -6,7 +6,6 @@ import { ButtonCTA, IconBtn } from "../../../components";
 export default class ProfileViewOne extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: "ProfileViewOne",
       headerRight: (
         <IconBtn
           source={require("../../../assets/icons/settings.png")}
@@ -17,17 +16,18 @@ export default class ProfileViewOne extends React.Component {
   };
 
   render() {
+    const theme = colors.getTheme();
     return (
       <View style={{ flex: 1 }}>
         <View
           style={{
             flex: 1,
-            backgroundColor: colors.mainColors.white,
+            backgroundColor: theme.backgroundColor,
             alignItems: "center",
             justifyContent: "center"
           }}
         >
-          <Text>ProfileViewOne Screen</Text>
+          <Text style={{ color: "#ffffff" }}>ProfileViewOne Screen</Text>
           <ButtonCTA
             title="Go to ProfileViewTwo"
             onPress={() => this.props.navigation.navigate("ProfileViewTwo")}

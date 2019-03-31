@@ -8,15 +8,13 @@ const SettingsStack = {
   SettingsViewOne: {
     screen: SettingsViewOne,
     navigationOptions: {
-      title: "SettingsViewOne",
-      headerTintColor: "#000000"
+      title: "SettingsViewOne"
     }
   },
   SettingsViewTwo: {
     screen: SettingsViewTwo,
     navigationOptions: {
-      title: "SettingsViewTwo",
-      headerTintColor: "#000000"
+      title: "SettingsViewTwo"
     }
   }
 };
