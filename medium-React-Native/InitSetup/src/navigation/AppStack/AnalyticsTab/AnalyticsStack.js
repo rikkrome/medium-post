@@ -7,15 +7,17 @@ import { AnalyticsViewOne, AnalyticsViewTwo } from "../../../screens/Analytics";
 const AnalyticsStack = {
   AnalyticsViewOne: {
     screen: AnalyticsViewOne,
+    path: "Analytics/:AnalyticsViewOne",
     navigationOptions: {
-      title: "Analytics",
+      title: "Stats",
       headerTintColor: "#000000"
     }
   },
   AnalyticsViewTwo: {
     screen: AnalyticsViewTwo,
+    path: "Analytics/:AnalyticsViewTwo",
     navigationOptions: {
-      title: "AnalyticsViewTwo",
+      title: "Activity",
       headerTintColor: "#000000"
     }
   }
