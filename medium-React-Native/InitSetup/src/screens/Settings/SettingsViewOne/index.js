@@ -36,8 +36,25 @@ export default class SettingsViewOne extends React.Component {
   };
 
   _logout = () => {
-    AsyncStorage.removeItem("userToken");
-    this.props.navigation.navigate("Auth");
+    Alert.alert(
+      "Logout",
+      "Are you sure?",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel pressed"),
+          style: "cancel"
+        },
+        {
+          text: "OK",
+          onPress: () => {
+            AsyncStorage.removeItem("userToken");
+            this.props.navigation.navigate("Auth");
+          }
+        }
+      ],
+      { cancelable: false }
+    );
   };
 
   _keyExtractor = item => item.id;
