@@ -38,11 +38,3 @@ export default function ButtonCTA({ type, style, title, onPress }) {
     </TouchableOpacity>
   );
 }
-
-{
-  /* <Button
-          title={title}
-          onPress={onPress}
-          color={colors.mainColors.white}
-        /> */
-}
