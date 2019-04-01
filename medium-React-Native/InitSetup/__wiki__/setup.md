@@ -34,18 +34,28 @@ follow the [React Native getting-started Docs](https://facebook.github.io/react-
 │    │   ├── images
 │    │   └── videos
 │    ├── components
-│    │   ├── ButtonCTA
-│    │   ├── ProgressBar
-│    │   ├── styles
+│    │   ├── ...
 │    │   └──  index.js
 │    ├── navigation
+│    │   ├── AppStack
+│    │   ├── AuthStack
 │    │   ├── AppNavigator.js
 │    │   └──  index.js
 │    ├── screens
+│    │   ├── Analytics
+│    │   │      ├── AnalyticsViewOne
+│    │   │      ├── AnalyticsViewTwo
+│    │   │      └── index.js
 │    │   ├── LoadingScreen
 │    │   ├── Login
 │    │   ├── Profile
+│    │   │      ├── ProfileViewOne
+│    │   │      ├── ProfileViewTwo
+│    │   │      └── index.js
 │    │   └── Settings
+│    │   │      ├── SettingsViewOne
+│    │   │      ├── SettingsViewTwo
+│    │   │      └── index.js
 │    ├── services
 │    ├── utils
 │    └── index.js
