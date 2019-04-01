@@ -8,7 +8,7 @@ const SettingsStack = {
   SettingsViewOne: {
     screen: SettingsViewOne,
     navigationOptions: {
-      title: "SettingsViewOne"
+      title: "Settings"
     }
   },
   SettingsViewTwo: {
